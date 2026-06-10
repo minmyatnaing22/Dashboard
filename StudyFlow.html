@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Personal Study Dashboard</title>
+        <link href="style2.css" rel="stylesheet">
+    </header>
+
+    <body>
+
+         <div class="app">
+
+            <aside class="sidebar">
+
+                 <h2>StudyFlow</h2>
+
+                <nav>
+
+                    <a href="#top" class="active">🏠 Dashboard</a>
+                    <a href="#task-card">✅ Tasks</a>
+                    <a href="#timer-card">🍅 Timer</a>
+                    <a href="#goal-card">🎯 Goals</a>
+                    <a href="#stats-card">📊 Progress</a>
+
+                </nav>
+
+                <button id="theme-toggle">
+                    Light Mode
+                </button>  
+                
+                
+                <div class="sidebar-footer">
+
+                    <p>Grade 12 Student</p>
+
+                    <small>
+                        Stay consistent 🚀
+                    </small>
+
+                </div>
+
+
+            </aside>
+
+
+             <main class="main-content" id="top">
+
+                <div class="topbar">
+
+                    <h1>Personal Productivity Dashboard</h1>
+
+                    <p>Tasks • Focus • Analytics • Goals</p>
+
+                    <div class="hero-quote-card">
+
+                        <p id="hero-quote">
+                            Loading quote...
+                        </p>
+
+                        <div class="quote-footer">
+
+                            <span id="hero-author"></span>
+
+                            <button id="new-quote-btn">
+                                <span>↻</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+                
+                </div>
+                
+                
+
+               <div class="main-grid">
+
+                    <div class="left-column">
+
+                        <!-- Goal List -->
+                        <div class="card" id="goal-card">
+                            <h2 id="goalheader">Top 5 Goals of the Year</h2>
+                            <form id="goal-form">
+
+                                <input
+                                    id="goal-input"
+                                    placeholder="Add a goal..."
+                                >
+
+                                <button type="submit">
+                                    Add
+                                </button>
+
+                            </form>
+
+                            <ul id="goal-list"></ul>
+                        </div>
+
+                    <!-- =============== -->
+
+                    <!-- Study Timer -->
+                        <div class="card" id="timer-card">
+                            <h2>Study Timer</h2>
+
+                            <h1 id="timer-display">25:00</h1>
+
+                            <div class="timer-buttons">
+
+                                <button id="start-btn">
+                                    Start
+                                </button>
+
+                                <button id="pause-btn">
+                                    Pause
+                                </button>
+
+                                <button id="reset-btn">
+                                    Reset
+                                </button>
+
+                            </div>
+                        </div>
+
+                            <!-- Analytics  -->
+                        <div class="card analytics-card" id="analytics-card">
+
+                                <div class="analytics-card-header">
+
+                                    <h2>Study Analytics</h2>
+
+                                    <button id="force-reset-btn">
+                                        ↺
+                                    </button>
+
+                                </div>
+                                
+                                <div class="analytics-item">
+
+                                    <span>✅ Tasks Completed</span>
+
+                                    <strong id="analytics-completed">
+                                        0
+                                    </strong>
+
+                                </div>
+
+                                <div class="analytics-item">
+
+                                    <span>📋 Total Tasks</span>
+
+                                    <strong id="analytics-total">
+                                        0
+                                    </strong>
+
+                                </div>
+
+                                <div class="analytics-item">
+
+                                    <span>📈 Completion Rate</span>
+
+                                    <strong id="analytics-rate">
+                                        0%
+                                    </strong>
+
+                                </div>
+
+                                <div class="analytics-item">
+
+                                    <span>🍅 Pomodoro Sessions</span>
+
+                                    <strong id="analytics-pomodoros">
+                                        0
+                                    </strong>
+
+                                    
+
+                                </div>
+
+                                <div class="analytics-item">
+
+                                    <span>⏱ Focus Time</span>
+
+                                    <strong id="analytics-focus-time">
+                                        0 min
+                                    </strong>
+
+                                </div>
+
+                        </div>
+                    </div>
+                
+                    <!-- ============================== -->
+
+                    <div class="right-column">
+
+                        <!-- Tasks -->
+                        <div class="card" id="task-card">
+                            <h2>Tasks</h2>
+
+                            <form id="task-form">
+
+                                <input
+                                    type="text"
+                                    id="task-input"
+                                    placeholder="Add study task..."
+                                >
+
+                                <button type="submit">
+                                    Add
+                                </button>
+
+                            </form>
+
+                    
+
+                        <div class="filter-buttons">
+
+                            <button data-filter="all">
+                                    All
+                            </button>
+
+                            <button data-filter="completed">
+                                    Completed
+                            </button>
+
+                            <button data-filter="pending">
+                                    Pending
+                            </button>
+
+                        </div>
+
+                            <ul id="task-list"></ul>
+
+                    </div>
+
+                            <!-- ============================= -->
+
+                       <div class="card weekly-card">
+
+                            <div class="card-header">
+
+                                <h2>Weekly Activity</h2>
+
+                                <button id="reset-chart-btn">
+                                    ↺
+                                </button>
+
+                            </div>
+
+                            <div id="weekly-chart"></div>
+
+                        </div>
+                </div>      
+            </main>
+
+            <div id="toast-container"></div>
+
+        </div>
+        <script src="main.js"></script>
+    </body>
+
+
+    <footer class="footer">
+    Built by Min Myat Niang, UIT student
+    </footer>
+</html>
